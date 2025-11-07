@@ -1,15 +1,17 @@
 @import "tailwindcss";
-
+bg-gradient-to-br from-indigo-50 via-white to-amber-50
 :root {
-  --background: #ffffff;
+  --background: 
   --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #4f46e5;
+  --font-sans: var(--font-inter-sans);
+  
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +22,16 @@
 }
 
 body {
-  background: var(--background);
+  @apply bg-linear-to-br from-indigo-50 via-white to-amber-50;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+.input-element {
+    @apply border p-2 m-2 rounded-lg border-gray-100 focus:border-black w-full h-12;
+  }
+
+.section-container {
+  @apply w-[60vw] flex flex-col justify-center items-center mt-10 mx-auto mb-30
+}
+
