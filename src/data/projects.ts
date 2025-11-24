@@ -1,3 +1,6 @@
+//  Put project images to folders in public with same name as project slug with numbers from 1 as file names.
+//  example path: public/projects/slug/1.png
+
 export type Project = {
   slug: string;
   title: string;
@@ -18,6 +21,7 @@ export const projects: Project[] = [
     description:
       "Wybierz temat i imię dziecka aby otrzymać bajkę stworzoną specjalnie dla Twojego dziecka",
     technologies: ["NextJS", "TailwindCSS", "OpenAI"],
+    image: "/projects/pracownia-opowiesci/1.png",
   },
   {
     slug: "krypto-tracker",
@@ -26,6 +30,7 @@ export const projects: Project[] = [
     description:
       "Sprawdzaj na bieżąco aktualne i historyczne ceny wielu kryptowalut, sprawdź historię zmian na wykresach",
     technologies: ["NextJS", "TailwindCSS"],
+    image: "/projects/krypto-tracker/1.png",
   },
   {
     slug: "blog-turystyczny",

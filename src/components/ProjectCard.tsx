@@ -2,16 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 type ProjectCardProps = {
   title: string;
   description: string;
   techStack: string[];
+  image: string | undefined;
 };
 export default function ProjectCard({
   title,
   description,
   techStack,
+  image,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -20,12 +23,16 @@ export default function ProjectCard({
       className="flex flex-col rounded-xl  h-full bg-white border border-dotted border-gray-200/80"
     >
       <div className="relative overflow-hidden aspect-video w-full h-[50%] ">
-        <Image
-          src="/project_image.png"
-          alt="Project screenshot"
-          fill
-          className="rounded-t-xl"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt="Project screenshot"
+            fill
+            className="rounded-t-xl"
+          />
+        ) : (
+          <ImagePlaceholder />
+        )}
       </div>
       <div className="px-2 pt-4">
         <div className="w-full m-auto">

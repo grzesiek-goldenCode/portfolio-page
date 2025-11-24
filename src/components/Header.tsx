@@ -14,15 +14,15 @@ export default function Header() {
           </h2>
         </Link>
         <div className="flex items-center">
-          <a href="#projects" className="mx-4">
+          <Link href="/projects" className="mx-4">
             Projekty
-          </a>
-          <a href="#technologies" className="mx-4">
+          </Link>
+          <Link href="/#technologies" className="mx-4">
             Umiejętości
-          </a>
-          <a href="#contact" className="mx-4">
+          </Link>
+          <Link href="#contact" className="mx-4">
             Kontakt
-          </a>
+          </Link>
           <Image src="github.svg" alt="github icon" width={30} height={30} />
         </div>
       </nav>{" "}

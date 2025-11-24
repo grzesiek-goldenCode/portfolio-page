@@ -21,6 +21,10 @@ bg-gradient-to-br from-indigo-50 via-white to-amber-50
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-linear-to-br from-indigo-50 via-white to-amber-50;
   color: var(--foreground);
