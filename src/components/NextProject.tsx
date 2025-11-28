@@ -10,8 +10,7 @@ type NextProjectProps = {
 };
 
 export default function NextProject({ index }: NextProjectProps) {
-  console.log(index);
-  const { slug, title, shortDescription, image } = projects[index];
+  const { slug, title, shortDescription, images } = projects[index];
   return (
     <div>
       <h2 className="text-center text-2xl font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-slate-50">
@@ -19,11 +18,11 @@ export default function NextProject({ index }: NextProjectProps) {
       </h2>
       <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white  flex  items-center gap-6 group hover:border-primary/50 transition-colors">
         <div className="relative w-full md:w-1/3 h-48 overflow-hidden">
-          {image ? (
+          {images ? (
             <Image
               className="object-cover"
               alt="Code on a dark computer screen with colorful syntax highlighting."
-              src={image}
+              src={images[0]}
               fill
             />
           ) : (

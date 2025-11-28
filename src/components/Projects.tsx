@@ -12,13 +12,13 @@ export default function Projects() {
         </h3>
         <div className="grid grid-cols-3 gap-40 px-5 h-60  mx-20 w-[80%]">
           {projects.map(
-            ({ title, shortDescription, technologies, image }, index) => (
+            ({ title, shortDescription, technologies, images }, index) => (
               <Link key={index} href={`/projects/${slug}`}>
                 <ProjectCard
                   title={title}
                   description={shortDescription}
                   techStack={technologies}
-                  image={image}
+                  images={images}
                 />
               </Link>
             )

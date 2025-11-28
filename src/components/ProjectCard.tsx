@@ -8,13 +8,13 @@ type ProjectCardProps = {
   title: string;
   description: string;
   techStack: string[];
-  image: string | undefined;
+  images: string[] | undefined;
 };
 export default function ProjectCard({
   title,
   description,
   techStack,
-  image,
+  images,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -23,9 +23,9 @@ export default function ProjectCard({
       className="flex flex-col rounded-xl  h-full bg-white border border-dotted border-gray-200/80"
     >
       <div className="relative overflow-hidden aspect-video w-full h-[50%] ">
-        {image ? (
+        {images ? (
           <Image
-            src={image}
+            src={images[0]}
             alt="Project screenshot"
             fill
             className="rounded-t-xl"

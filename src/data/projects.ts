@@ -7,7 +7,7 @@ export type Project = {
   shortDescription: string;
   description: string;
   technologies: string[];
-  image?: string;
+  images?: string[];
   github?: string;
   demo?: string;
   date?: string;
@@ -21,7 +21,8 @@ export const projects: Project[] = [
     description:
       "Wybierz temat i imię dziecka aby otrzymać bajkę stworzoną specjalnie dla Twojego dziecka",
     technologies: ["NextJS", "TailwindCSS", "OpenAI"],
-    image: "/projects/pracownia-opowiesci/1.png",
+    images: ["/projects/pracownia-opowiesci/1.png"],
+    github: "https://github.com/grzesiek-goldenCode/AIStoryTell",
   },
   {
     slug: "krypto-tracker",
@@ -29,8 +30,13 @@ export const projects: Project[] = [
     shortDescription: "Śledzenie kursów kryptowalut",
     description:
       "Sprawdzaj na bieżąco aktualne i historyczne ceny wielu kryptowalut, sprawdź historię zmian na wykresach",
-    technologies: ["NextJS", "TailwindCSS"],
-    image: "/projects/krypto-tracker/1.png",
+    technologies: ["React", "TailwindCSS"],
+    images: [
+      "/projects/krypto-tracker/1.png",
+      "/projects/krypto-tracker/2.png",
+      "/projects/krypto-tracker/3.png",
+    ],
+    github: "https://github.com/grzesiek-goldenCode/Crypto-tracker",
   },
   {
     slug: "blog-turystyczny",
@@ -39,5 +45,6 @@ export const projects: Project[] = [
     description:
       "Blog nastawiony na turystykę w NextJS i backend na Sanity, obsługuje kategorie, stronę główną i niezbędne podstrony",
     technologies: ["NextJS", "TailwindCSS", "Sanity"],
+    github: "https://github.com/grzesiek-goldenCode/blog-zloty-trop",
   },
 ];

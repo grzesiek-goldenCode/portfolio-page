@@ -1,3 +1,4 @@
+import Gallery from "@/components/Gallery";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import NextProject from "@/components/NextProject";
 import { projects } from "@/data/projects";
@@ -13,8 +14,18 @@ type Props = {
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const index = projects.findIndex((project) => project.slug === slug);
-  const { title, description, shortDescription, technologies, image } =
-    projects[index];
+  const {
+    title,
+    description,
+    shortDescription,
+    technologies,
+    images,
+    github,
+    demo,
+  } = projects[index];
+
+  const activeButtonClasses = "bg-primary hover:bg-primary/90";
+  const inactiveButtonClasses = "bg-gray-400";
 
   return (
     <div className="w-[60vw] mx-auto mt-5">
@@ -93,59 +104,36 @@ export default async function ProjectPage({ params }: Props) {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 mt-2">
-                <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-primary/90">
+                <a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex w-full items-center justify-center gap-2 rounded-lg  px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-colors ${
+                    demo ? activeButtonClasses : inactiveButtonClasses
+                  }`}
+                >
                   <span className="material-symbols-outlined text-base">
                     open_in_new
                   </span>
                   Live Demo
-                </button>
-                <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700">
+                </a>
+
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700"
+                >
                   <span className="material-symbols-outlined text-base">
                     code
                   </span>
                   View Code
-                </button>
+                </a>
               </div>
             </div>
           </div>
         </section>
-        <section>
-          <h2 className="text-slate-900 dark:text-slate-50 text-2xl font-bold leading-tight tracking-[-0.015em] pb-4 border-b border-slate-200 dark:border-slate-800">
-            Galeria
-          </h2>
-          <div className="relative mt-6">
-            <div className="aspect-video w-full overflow-hidden rounded-xl">
-              {image ? (
-                <div className="h-full w-full object-cover">
-                  <Image
-                    alt="A website dashboard with charts and graphs on a laptop screen."
-                    src={image}
-                    fill
-                  />
-                </div>
-              ) : (
-                <ImagePlaceholder />
-              )}
-            </div>
-            <div className="absolute inset-0 flex items-center justify-between px-4">
-              <button className="grid size-10 place-content-center rounded-full bg-white/50 text-slate-900 backdrop-blur-sm transition hover:bg-white/75 dark:bg-black/50 dark:text-white dark:hover:bg-black/75">
-                <span className="material-symbols-outlined">
-                  arrow_back_ios_new
-                </span>
-              </button>
-              <button className="grid size-10 place-content-center rounded-full bg-white/50 text-slate-900 backdrop-blur-sm transition hover:bg-white/75 dark:bg-black/50 dark:text-white dark:hover:bg-black/75">
-                <span className="material-symbols-outlined">
-                  arrow_forward_ios
-                </span>
-              </button>
-            </div>
-            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-              <div className="size-2 rounded-full bg-white"></div>
-              <div className="size-2 rounded-full bg-white/50"></div>
-              <div className="size-2 rounded-full bg-white/50"></div>
-            </div>
-          </div>
-        </section>
+        <Gallery slug={slug} images={images} />
         <section className="py-12">
           <NextProject index={index < projects.length - 1 ? index + 1 : 0} />
         </section>
