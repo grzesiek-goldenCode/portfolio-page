@@ -1,6 +1,6 @@
 export default function ContactForm() {
   return (
-    <form className="flex flex-col justify-center items-center w-[80%] px-30">
+    <form className="flex flex-col justify-center items-center w-full lg:w-[80%] px-10 lg:px-30">
       <input
         name="name"
         placeholder="Imię"

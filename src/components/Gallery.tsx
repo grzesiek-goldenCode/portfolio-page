@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import ImagePlaceholder from "./ImagePlaceholder";
 
+// ToDo -------
+//Script for reading images from projects folder to file to avoid hardcoding all files to projects.ts
+
 type GalleryProps = {
   slug: string;
   images: string[] | undefined;

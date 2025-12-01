@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -21,20 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
       </head>
-      <body
-        className={`${interSans.variable}  antialiased overflow-auto min-h-screen flex flex-col`}
-      >
-        <Header />
-        <main className="flex-1">{children}</main>
+      <body className={`${interSans.variable}  antialiased  min-h-screen`}>
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          <Header />
+          <main className="flex-1">{children}</main>
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ export default function ProjectCard({
     <motion.div
       whileHover={{ scale: 1.02, y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="flex flex-col rounded-xl  h-full bg-white border border-dotted border-gray-200/80"
+      className="flex flex-col rounded-xl  h-full bg-white border border-dotted border-gray-200/80 dark:border-gray-700 dark:bg-[#2C3E50]/50"
     >
       <div className="relative overflow-hidden aspect-video w-full h-[50%] ">
         {images ? (
@@ -34,12 +34,12 @@ export default function ProjectCard({
           <ImagePlaceholder />
         )}
       </div>
-      <div className="px-2 pt-4">
+      <div className="px-2 pt-4 h-[50%]">
         <div className="w-full m-auto">
-          <h4 className="text-lg font-medium">{title}</h4>
+          <h4 className="text-lg font-medium ">{title}</h4>
           <p className="text-sm font-normal">{description}</p>
         </div>
-        <div className="w-full m-auto flex mt-3 flex-wrap">
+        <div className="w-full m-auto flex mt-3 flex-wrap h-fit">
           {techStack.map((tech, i) => (
             <p
               key={i}
