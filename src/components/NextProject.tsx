@@ -30,7 +30,7 @@ export default function NextProject({ index }: NextProjectProps) {
           )}
         </div>
         <div className="flex flex-col p-6 pt-0 md:pt-6 md:pr-8">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-2 group-hover:text-primary transition-colors">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-black mb-2 group-hover:text-primary transition-colors">
             {title}
           </h3>
           <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
