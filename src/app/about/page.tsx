@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div className="section-container">
       <h2 className="text-2xl font-semibold mb-20 mt-10">Kilka słów o mnie</h2>
-      <div className="prose prose-neutral dark:prose-invert max-w-none -[80%]">
+      <div className="prose prose-neutral dark:prose-invert max-w-[80%]">
         <p className="mb-5">
           Jestem początkującym full-stack developerem pracującym głównie w
           ekosystemie Next.js, gdzie łączę frontendowe podejście z podstawową

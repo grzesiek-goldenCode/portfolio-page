@@ -1,6 +1,7 @@
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import Services from "@/components/Services";
 import Technologies from "@/components/Technologies";
 import Image from "next/image";
 
@@ -12,6 +13,9 @@ export default function Home() {
       </section>
       <section id="projects" className="relative w-full py-20 md:py-28 ">
         <Projects />
+      </section>
+      <section id="services" className="relative w-full py-20 md:py-28 ">
+        <Services />
       </section>
       <section id="technologies" className="relative w-full py-20 md:py-28 ">
         <Technologies />
