@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -33,7 +34,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
           <Header />
           <main className="flex-1">{children}</main>
-
+          <Toaster position="top-center" />
           <Footer />
         </ThemeProvider>
       </body>

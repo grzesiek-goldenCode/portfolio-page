@@ -21,7 +21,7 @@ export default function ServiceCard({
       onClick={() => setIsOpen(!open)}
     >
       <h4
-        className={`absolute inset-auto p-5 text-2xl font-bold md:opacity-100 md:group-hover:opacity-0 transition-opacity duration-300 ${
+        className={`absolute inset-auto p-5 text-2xl font-bold md:opacity-100 md:group-hover:opacity-0 transition-opacity duration-200 ${
           open ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -30,7 +30,7 @@ export default function ServiceCard({
       <p
         className={`${
           open ? "opacity-100 translate-y-0" : " opacity-0 translate-y-2"
-        } md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 z-10 md:translate-y-2 md:group-hover:translate-y-0 font-semibold`}
+        } md:opacity-0 md:group-hover:opacity-100 transition-all duration-200 z-10 md:translate-y-2 md:group-hover:translate-y-0 font-semibold`}
       >
         {text}
       </p>

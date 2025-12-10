@@ -1,5 +1,6 @@
 import { services } from "@/data/services";
 import ServiceCard from "./ServiceCard";
+import { toast } from "sonner";
 
 export default function Services() {
   return (
@@ -7,6 +8,7 @@ export default function Services() {
       <h3 className="text-2xl mt-10 self-start mb-20 font-bold hover:underline">
         Usługi:
       </h3>
+
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-4xl w-full auto-rows-[250px]">
         <ServiceCard
           title={services[0].title}

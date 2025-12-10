@@ -8,19 +8,19 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="scroll-smooth gap-10">
-      <section className="relative w-full py-20 md:py-28 overflow-hidden">
+      <section className="relative w-full pb-20 md:pb-28 overflow-hidden">
         <Hero />
       </section>
-      <section id="projects" className="relative w-full py-20 md:py-28 ">
+      <section id="projects" className="relative w-full by-20 md:pb-28 ">
         <Projects />
       </section>
-      <section id="services" className="relative w-full py-20 md:py-28 ">
+      <section id="services" className="relative w-full pb-20 md:pb-28 ">
         <Services />
       </section>
-      <section id="technologies" className="relative w-full py-20 md:py-28 ">
+      <section id="technologies" className="relative w-full pb-20 md:pb-28 ">
         <Technologies />
       </section>
-      <section className="relative w-full py-20 md:py-28 overflow-hidden">
+      <section className="relative w-full pb-20 md:pb-28 overflow-hidden">
         <Contact />
       </section>
     </main>
